@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,18 +29,20 @@
                 <label>IsGod:</label>
                 <input id="isGod" name="isGod" type="checkbox">
             </fieldset>
-            <fieldset>
-                <label>Superpower:</label>
-                <select id="superpower">
-                    <option>Rock</option>
-                    <option>Paper</option>
-                    <option>Scissors</option>
-                </select>
-            </fieldset>
-            <fieldset>
-                <label>Powerlevel:</label>
-                <input id="powerlevel" name="powerlevel" type="slider">
-            </fieldset>
+            <div>
+                <fieldset>
+                    <label>Superpower:</label>
+                    <select id="superpower">
+                        <option>Rock</option>
+                        <option>Paper</option>
+                        <option>Scissors</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <label>Powerlevel:</label>
+                    <input id="powerlevel" name="powerlevel" type="slider">
+                </fieldset>
+            </div>
         </form>
     </div>
 

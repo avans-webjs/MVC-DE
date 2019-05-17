@@ -37,7 +37,19 @@ console.log(lamas);
 
 class CreateLamaView
 {
+    template;
+    checkbox;
+
     constructor(){
-        
+        this.template = document.getElementById('create_lama');
+
+        this.checkbox = document.getElementById('isGod');
+        this.checkbox.addEventListener('click', function(){
+            //console.log(this.checked);
+            //maak de velden on/zichtbaar
+        });
     }
 }
+
+
+let createLamaView = new CreateLamaView();
