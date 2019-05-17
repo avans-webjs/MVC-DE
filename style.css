@@ -11,3 +11,7 @@ fieldset label{
     width:100px;
     padding:5px;
 }
+
+#god_template{
+    display: none;
+}

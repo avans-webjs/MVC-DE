@@ -15,7 +15,7 @@
     <h2>Lamamanager</h2>
 
     <div id="create_lama">
-        <form>
+        <form id="lama_form">
             <fieldset>
                 <label>Name:</label>
                 <input id="name" name="name">
@@ -29,7 +29,7 @@
                 <label>IsGod:</label>
                 <input id="isGod" name="isGod" type="checkbox">
             </fieldset>
-            <div>
+            <div id="god_template">
                 <fieldset>
                     <label>Superpower:</label>
                     <select id="superpower">
@@ -43,11 +43,12 @@
                     <input id="powerlevel" name="powerlevel" type="slider">
                 </fieldset>
             </div>
+            <input type="submit" value="Opslaan">
         </form>
     </div>
 
     <div id="lama_list">
-
+        
     </div>
 
 

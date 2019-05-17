@@ -26,30 +26,53 @@ class LamaService
     }
 
     saveLama(lama){
-
+        console.log(lama);
     }
 }
 
-let lamaService = new LamaService();
-let lamas = lamaService.getLamas();
-console.log(lamas);
 
 
 class CreateLamaView
 {
     template;
     checkbox;
+    lamaform;
 
-    constructor(){
+    constructor(controller){
         this.template = document.getElementById('create_lama');
-
+        this.lamaform = document.getElementById('lama_form');
         this.checkbox = document.getElementById('isGod');
+        
+        //events
         this.checkbox.addEventListener('click', function(){
-            //console.log(this.checked);
-            //maak de velden on/zichtbaar
+            document.getElementById("god_template").style.display = 
+                this.checked ? "block" : "none";
         });
+
+        this.lamaform.addEventListener('submit', function(e){
+            e.preventDefault();
+            controller.addLama({
+                name: this.name.value,
+                age: this.age.value
+            })
+        })
     }
 }
 
+class LamaController
+{
+    createlamaview;
+    lamaService;
 
-let createLamaView = new CreateLamaView();
+    constructor(){
+        this.createlamaview =  new CreateLamaView(this);
+        this.lamaService = new LamaService();
+    }
+
+    addLama = function(data){
+        this.lamaService.saveLama(new Lama(data));
+    }
+}
+
+let controller = new LamaController();
+
