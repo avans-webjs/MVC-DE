@@ -15,3 +15,16 @@ fieldset label{
 #god_template{
     display: none;
 }
+
+#lama_list{
+    display: flex;
+    border:1px solid #eee;
+    padding:10px;
+}
+
+#lama_list .lama{
+    padding:10px;
+    border: 1px solid #2e2e2e;
+    border-radius: 3px; 
+    margin:5px;
+}

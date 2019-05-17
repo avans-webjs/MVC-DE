@@ -30,7 +30,36 @@ class LamaService
     }
 }
 
+class ListLamaView
+{
+    template;
 
+    //2 opties
+    
+    constructor(controller)
+    {
+        this.template = document.getElementById('lama_list');
+
+        //denk eens na over deze regel
+        //let lamas = controller.getLamas();
+
+       
+    }
+
+    drawLamas(lamas){
+        lamas.forEach(lama => {
+            let lamael = document.createElement('div');
+            lamael.className = "lama";
+    
+            let lamaname = document.createElement("span");
+            lamaname.innerText = lama.name;
+
+            lamael.appendChild(lamaname);
+
+            this.template.appendChild(lamael);
+        });
+    }
+}
 
 class CreateLamaView
 {
@@ -53,7 +82,10 @@ class CreateLamaView
             e.preventDefault();
             controller.addLama({
                 name: this.name.value,
-                age: this.age.value
+                age: this.age.value,
+                isGod: this.isGod.value,
+                powerlevel: this.powerlevel.value,
+                superpower: this.superpower.value
             })
         })
     }
@@ -62,15 +94,24 @@ class CreateLamaView
 class LamaController
 {
     createlamaview;
+    listlamaview;
     lamaService;
 
     constructor(){
-        this.createlamaview =  new CreateLamaView(this);
         this.lamaService = new LamaService();
+
+        this.createlamaview =  new CreateLamaView(this);
+        this.listlamaview = new ListLamaView(this);
+        this.listlamaview.drawLamas(this.lamaService.getLamas());
     }
 
     addLama = function(data){
         this.lamaService.saveLama(new Lama(data));
+    }
+
+    getLamas = function()
+    {
+        return this.lamaService.getLamas();
     }
 }
 
