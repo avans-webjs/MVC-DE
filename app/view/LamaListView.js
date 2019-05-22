@@ -1,8 +1,7 @@
 
-class ListLamaView
+export class ListLamaView
 {
-    template;
-
+    
     constructor(controller)
     {
         this.template = document.getElementById('lama_list');       

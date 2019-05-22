@@ -1,21 +1,19 @@
 
+import { LamaService } from '../model/LamaService'
+import { CreateLamaView } from '../view/LamaCreateView';
+import { ListLamaView } from '../view/LamaListView';
 
-
-class LamaController
+export default class LamaController
 {
-    createlamaview;
-    listlamaview;
-    lamaService;
-
+    //this is the constructor
     constructor(){
         this.lamaService = new LamaService();
-
         this.createlamaview =  new CreateLamaView(this);
         this.listlamaview = new ListLamaView(this);
         this.listlamaview.drawLamas(this.lamaService.getLamas());
     }
 
-    addLama = function(data){
+    addLama(data){
         this.lamaService.saveLama(new Lama(data));
         this.listlamaview.drawLamas(this.lamaService.getLamas());
     }

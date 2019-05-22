@@ -1,10 +1,7 @@
 
-class CreateLamaView
+export class CreateLamaView
 {
-    template;
-    checkbox;
-    lamaform;
-
+ 
     constructor(controller){
         this.template = document.getElementById('create_lama');
         this.lamaform = document.getElementById('lama_form');

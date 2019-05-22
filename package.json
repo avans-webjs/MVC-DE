@@ -1,0 +1,21 @@
+{
+  "name": "mvc-de",
+  "version": "1.0.0",
+  "description": "Workshop opdracht groep D &amp; E",
+  "dependencies": {
+   
+  },
+  "devDependencies": {
+    "webpack": "^4.32.1",
+    "webpack-cli": "^3.3.2"
+  },
+  "scripts": {
+    "start": "webpack --watch -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avans-webs3/MVC-DE.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

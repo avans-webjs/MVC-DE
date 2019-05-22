@@ -1,10 +1,16 @@
-class LamaService
+
+import { Lama } from './Lama';
+
+
+export class LamaService
 {
-    lamas =   [
-        new Lama({ name: "Jeroen", isKrokodil: true}),
-        new Lama({ name: "Stijn"}),
-        new Lama({ name: "Jim"})
-    ]
+    constructor(){
+        this.lamas =   [
+            new Lama({ name: "Jeroen", isKrokodil: true}),
+            new Lama({ name: "Stijn"}),
+            new Lama({ name: "Jim"})
+        ]
+    }
 
     getLamas()
     {
